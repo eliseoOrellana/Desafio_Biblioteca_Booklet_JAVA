@@ -40,7 +40,7 @@ public class LibroDAOImpl implements LibroDAO {
     @Override
     public int add(Libro libro) {
         System.out.println(libro);
-        return jdbcTemplate.update("insert into biblioteca values (?, ?, ?, ?, ?)", libro.getAnho(),
+        return jdbcTemplate.update("insert into biblioteca (`anho`, `titulo`, `autor`, `imprenta`, `disponible`) values (?, ?, ?, ?, ?)", libro.getAnho(),
                 libro.getTitulo(), libro.getAutor(), libro.getImprenta(), libro.getDisponibilidad());
     }
 
